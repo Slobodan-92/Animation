@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+
+    <style>
+
+       #box {
+            width: 500px;
+            height: 500px;
+            margin: 150px auto;
+            background-color: #050210;
+            position: relative;
+
+        }
+
+        #box-1 {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            border-radius: 50%;
+            left: 0;
+            right: 0;
+            margin: 100px auto;
+            background: linear-gradient(#fb5dad 10%, #55fb9f, #b97aff 90%);
+
+            animation-name: my-animation;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        #box-1 div{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            filter: blur(50px);
+        }
+
+        #box-1::after{
+            position: absolute;
+            content: '';
+            top: 20px;
+            bottom: 20px;
+            right: 20px;
+            left: 20px;
+            background: #050210;
+            border-radius: 50%;
+        }
+
+            @keyframes my-animation {
+                0% {
+                    transform: rotateZ(0deg);
+                }
+
+                100% {
+                    transform: rotateZ(360deg);
+                }
+            }
+    </style>
+
+</head>
+
+<body>
+    <div id="box">
+        <div id="box-1">
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>
